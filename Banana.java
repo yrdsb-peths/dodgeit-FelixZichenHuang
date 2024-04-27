@@ -14,7 +14,7 @@ public class Banana extends Actor
      */
     public void act()
     {
-        move(-10);
+        move(-15);
         
         if (getX() <= 0) {
             resetBanana();
@@ -22,7 +22,8 @@ public class Banana extends Actor
         
         if (isTouching(Hero.class)) {
             SadFace sadFace = new SadFace();
-            getWorld().addObject(sadFace, 300, 200);
+            getWorld().addObject(sadFace, 300, 180);
+            getWorld().showText("Game Over!", 300, 240);
             getWorld().removeObject(this);
         }
     }
